@@ -1,0 +1,210 @@
+:root {
+  --no: 2416501042;
+  --ton: 322;
+  --renk-ana: hsl(var(--ton), 65%, 38%);
+  --renk-zemin: hsl(var(--ton), 30%, 97%);
+  --font: "Tahoma", sans-serif;
+  --bosluk-m: 1rem;
+  --kose: 8px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font);
+  background-color: var(--renk-zemin);
+  color: #333;
+  line-height: 1.5;
+  padding: var(--bosluk-m);
+}
+
+/* Üst Başlık ve Menü */
+header {
+  background-color: var(--renk-ana);
+  color: #fff;
+  padding: var(--bosluk-m);
+  border-radius: var(--kose);
+  margin-bottom: var(--bosluk-m);
+}
+
+header h1 {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.95rem;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Ana İçerik Kapsayıcı */
+main {
+  background: #ffffff;
+  padding: var(--bosluk-m);
+  border-radius: var(--kose);
+  border: 1px solid #ddd;
+  margin-bottom: var(--bosluk-m);
+}
+
+main h2 {
+  font-size: 1.2rem;
+  margin-bottom: var(--bosluk-m);
+  color: var(--renk-ana);
+}
+
+/* Kart Izgarası (Grid) */
+.etkinlik-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--bosluk-m);
+  margin-bottom: var(--bosluk-m);
+}
+
+.etkinlik-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--bosluk-m);
+  margin-bottom: var(--bosluk-m);
+}
+
+article.kart {
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: var(--kose);
+  padding: var(--bosluk-m);
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+article.kart h3 {
+  font-size: 1.05rem;
+  color: #222;
+}
+
+article.kart a {
+  margin-top: auto;
+  color: var(--renk-ana);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* Detay Sayfası Düzeni */
+.detay-kapsayici {
+  display: flex;
+  gap: var(--bosluk-m);
+  align-items: flex-start;
+}
+
+.detay-afis {
+  width: 50%;
+  border: 1px dashed #999;
+  border-radius: var(--kose);
+  background: #f9f9f9;
+  padding: 2rem;
+  text-align: center;
+}
+
+.detay-kunye {
+  width: 50%;
+}
+
+.detay-kunye dl {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  row-gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.detay-kunye dt {
+  font-weight: bold;
+}
+
+/* Form Elemanları */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  max-width: 600px;
+}
+
+.form-grup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+label {
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 0.6rem;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 0.95rem;
+}
+
+input:invalid:focus,
+select:invalid:focus,
+textarea:invalid:focus {
+  border-color: #d9534f;
+  background-color: #fff8f8;
+}
+
+button {
+  background-color: var(--renk-ana);
+  color: white;
+  padding: 0.65rem 1.25rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  align-self: flex-start;
+  min-height: 44px;
+}
+
+/* Telefon / Responsive Görünüm */
+@media (max-width: 768px) {
+  body {
+    padding: 0.5rem;
+  }
+
+  .etkinlik-grid,
+  .etkinlik-grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .detay-kapsayici {
+    flex-direction: column;
+  }
+
+  .detay-afis,
+  .detay-kunye {
+    width: 100%;
+  }
+
+  button {
+    width: 100%;
+  }
+}
